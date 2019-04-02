@@ -1,7 +1,9 @@
 package whackamole;
 
 
-    // Create a class called WhackAMole.
+import java.util.Random;
+
+// Create a class called WhackAMole.
 public class WhackAMole {
     // Create instance variables called: score, molesLeft and attemptsLeft.
     int score;
@@ -47,6 +49,24 @@ public class WhackAMole {
             System.out.println("Only " + this.attemptsLeft + " attempts left.");
         }
         this.attemptsLeft --;
+    }
+    public void printGrid() {
+        for (char i = 0; i < this.moleGrid.length; i ++) {
+            for (char j = 0; j < this.moleGrid[0].length; j ++) {
+                this.moleGrid[i][j] = '*';
+            }
+        }
+        for (int i = 0; i < 10; i ++) {
+            int a = new Random().nextInt(10);
+            int b = new Random().nextInt(10);
+            this.place(a, b);
+        }
+        for (char[] a : this.moleGrid) {
+            for (char i : a) {
+                System.out.println(i + "\t");
+            }
+            System.out.println("\n");
+        }
     }
 
 }
