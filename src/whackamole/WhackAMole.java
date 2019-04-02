@@ -36,5 +36,17 @@ public class WhackAMole {
             return false;
         }
     }
+    public void whack(int x, int y) {
+        if (this.moleGrid[x][y] == 'M') {
+            this.score ++;
+            this.molesLeft --;
+            System.out.println("Still there are " + this.molesLeft + " moles to go.");
+            System.out.println("Your score is now " + this.score + ".");
+        }
+        else {
+            System.out.println("Only " + this.attemptsLeft + " attempts left.");
+        }
+        this.attemptsLeft --;
+    }
 
 }
